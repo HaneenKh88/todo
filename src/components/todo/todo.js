@@ -60,7 +60,7 @@ function ToDo (props) {
           </Navbar >
         </header>
 
-        <Container fluid="md" style={{ marginTop: '3rem' }}>
+        <Container fluid="md" style={{ marginTop: '2rem' }}>
 
          <Row className="justify-content-md-center">
 					<Col sm={3}>
