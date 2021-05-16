@@ -5,10 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 
 function Main () {
-
+ 
     return <App />;
-  }
-
+  
+}
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(<Main />, rootElement);
