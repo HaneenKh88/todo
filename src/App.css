@@ -53,3 +53,21 @@
   font-size: 1.5em;
 }
 
+.list-group
+{
+  height: 80px;
+}
+
+.difficulty {
+  position: relative;
+    bottom: -10px;
+    left: 75%;
+}
+
+.list
+{
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 600px;
+  
+}
