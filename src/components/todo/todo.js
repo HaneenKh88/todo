@@ -7,6 +7,10 @@ import Card from "react-bootstrap/Card";
 import TodoForm from "./form.js";
 import TodoList from "./list.js";
 import useAjax from "../../hooks/axious";
+import ChangeNumberOfPages from './itemperpage'
+import Pagination from './pagination';
+import PaginationContext from '../context/pagination-context'
+
 
 import "./todo.scss";
 
@@ -35,23 +39,38 @@ const ToDo = () => {
         </header>
       <br></br>
       <Container fluid="md">
-
+      
         <Row className="justify-content-md-center">
+          <div>
 					<Col sm={3}>
-						<Card>
-							<Card.Body>
+						<Card style={{width:"300px"}}>
+							<Card.Body style={{width:"300px"}}>
 								<Card.Text>
 									<TodoForm handleSubmit={_addItem} />
+                 
 								</Card.Text>
 							</Card.Body>
 						</Card>
 					</Col>
-					<Col md={{ span: 6, offset: 1 }}>
+         </div>
+         <PaginationContext list={list}>
+        
+					<Col md={{ span: 6, offset: 2 }}>
+          <ChangeNumberOfPages/>
+         
           <TodoList list={list} handleComplete={_toggleComplete}  handleDelete ={deleteTodo}/>
+        
 					</Col>
+          <Pagination 
+        totalitems={list.length}
+      />
+          </PaginationContext>
 				</Row>
+       
       </Container>
+      
     </div>
+    
   );
 };
 
