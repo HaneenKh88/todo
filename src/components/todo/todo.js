@@ -14,10 +14,10 @@ import PaginationContext from '../context/pagination-context'
 
 import "./todo.scss";
 
-
+const todoAPI = 'https://api-js401.herokuapp.com/api/v1/todo';
 
 const ToDo = () => {
-  const [list,_addItem, _toggleComplete, _getTodoItems,deleteTodo ] = useAjax();
+  const [list, fetchingData] = useAjax(todoAPI);
 
 
 
@@ -26,12 +26,14 @@ const ToDo = () => {
     document.title=`To Do List: complete ${list.filter(item => item.complete).length}`
   })
 
-  useEffect(_getTodoItems, []);
+  useEffect(fetchingData, []);
 
   return (
     <div className="form-container">
        <header>
+
           <Navbar className="CountBar"expand="lg" bg="dark" variant="dark">
+            
           <Navbar.Brand>
           To Do List Manger {list.filter(item => !item.complete).length} 
           </Navbar.Brand>
@@ -46,7 +48,7 @@ const ToDo = () => {
 						<Card style={{width:"300px"}}>
 							<Card.Body style={{width:"300px"}}>
 								<Card.Text>
-									<TodoForm handleSubmit={_addItem} />
+									<TodoForm handleSubmit={fetchingData} />
                  
 								</Card.Text>
 							</Card.Body>
@@ -58,7 +60,7 @@ const ToDo = () => {
 					<Col md={{ span: 6, offset: 2 }}>
           <ChangeNumberOfPages/>
          
-          <TodoList list={list} handleComplete={_toggleComplete}  handleDelete ={deleteTodo}/>
+          <TodoList list={list} handleComplete={fetchingData}  handleDelete ={fetchingData}/>
         
 					</Col>
           <Pagination 

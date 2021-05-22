@@ -3,10 +3,13 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Toast from "react-bootstrap/Toast";
 import Badge from "react-bootstrap/Badge";
 import { PaginationContext }  from '../context/pagination-context'
+import Form from "react-bootstrap/Form";
+
 
 const TodoList = (props) => {
   const pagination = useContext(PaginationContext);
   return (
+    <>
     <div className="class">
     <ListGroup className="list" >
       {pagination.currentItem.map((item) => (
@@ -14,21 +17,28 @@ const TodoList = (props) => {
             action
             className={`complete-${item.complete.toString()}`}
             key={item._id}
-            onClose={() => props.handleDelete(item._id)}
+            onClose={() => props.handleDelete(item._id,'delete')}
           >
             <Toast.Header >
               <Badge pill  variant={item.complete ? "success" : "danger"}>{item.complete ? "Complete" : "Pending..."}</Badge>
               <strong className="mr-auto">{item.assignee}</strong>
             </Toast.Header>
-            <Toast.Body onClick={() => props.handleComplete(item._id)}>
+            <Toast.Body onClick={() => props.handleComplete(item._id,'put')}>
               {item.text}
               <div class="difficulty">difficulty : {item.difficulty}</div>
             </Toast.Body>
           </Toast>
+          
       ))}
+      
     </ListGroup>
+   
     </div>
+    
+   </>
   );
+ 
+
 };
 
 export default TodoList;
