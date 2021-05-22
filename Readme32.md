@@ -2,11 +2,11 @@
 
 ### Deploy link on Netlify:
 
-[Netlify](https://60a2a13aaa73e3008a9d09a8--haneentodo.netlify.app/)
+[Netlify](https://60a85c1297bedd2e4280ecbe--haneentodo.netlify.app/)
 
 ### Pull Request Link
 
-[TO DO](https://github.com/HaneenKh88/todo/pull/4)
+[TO DO](https://github.com/HaneenKh88/todo/pull/6)
 
 ****************************************************************************************************
 
