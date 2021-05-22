@@ -6,11 +6,11 @@ I work on the lab with a group.
 
 ### Deploy link on Netlify:
 
-[Netlify](https://60a455ab0dca8d00d1a8d7a0--haneentodo.netlify.app/)
+[Netlify](https://60a85c1297bedd2e4280ecbe--haneentodo.netlify.app/)
 
 ### Pull Request Link
 
-[TO DO](https://github.com/HaneenKh88/todo/pull/5)
+[TO DO](https://github.com/HaneenKh88/todo/pull/6)
 
 ****************************************************************************************************
 
