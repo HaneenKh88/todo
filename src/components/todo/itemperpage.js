@@ -14,8 +14,44 @@ const Handler = (e) =>{
     return (
       <>
 
-      <br></br>
-      <Form.Control style={{marginLeft:"-80px" , marginBottom:"15px"}} as="select" size="lg" custom onChange={Handler}>
+<div key={`inline-radio`} className="mb-3" style={{ marginBottom:"10px", backgroundColor:"#2A2A2A", color:"white", width:"400px", height:"40px", textAlign:"center"}} size="lg">
+         <Form.Check
+           
+						inline
+						label="Sort Items by Difficulty"
+						name="sort"
+						type="radio"
+						id={`inline-radio-1`}
+						onClick={() => {
+						
+							let sorted = pagination.list.sort(
+								(item1,item2)=>   item1.difficulty > item2.difficulty ? 1 : -1 
+							);
+							pagination.setList([...sorted]);
+              console.log("sorted", sorted)
+						}}
+            />
+
+<Form.Check
+           
+           inline
+           label="Sort Items by completed"
+           name="sort"
+           type="radio"
+           id={`inline-radio-2`}
+           onClick={() => {
+          	let sorted = pagination.CompleteItems.filter(
+              (item) => item.complete === true );
+              pagination.setCompleteItems([...sorted]);
+              console.log("sorted", sorted);
+              
+            
+          }}
+           />
+
+</div>
+
+      <Form.Control style={{marginLeft:"-80px" , marginBottom:"10px"}} as="select" size="lg" custom onChange={Handler}>
                 <option> items/page </option>
                 <option value='3'> 3 </option>
                 <option value='6'> 6 </option>

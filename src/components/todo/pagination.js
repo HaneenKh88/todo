@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import { PaginationContext }  from '../context/pagination-context'
+import Form from "react-bootstrap/Form"
 
 const Pagination = ({totalitems}) => {
   const numberOfThePage = [];
@@ -11,7 +12,12 @@ const Pagination = ({totalitems}) => {
 
 
   return (
-    <nav>
+    <>
+   
+    <div>
+   
+       <br></br>
+       <br></br>
       <ul className='pagination'>
         {numberOfThePage.map(num => (
           <li key={num} className='page-item'>
@@ -34,10 +40,14 @@ const Pagination = ({totalitems}) => {
               Next
             </a>
           </li>
-        
-       
+      
       </ul>
-    </nav>
+
+     
+				
+
+    </div>
+    </>
   );
 };
 
